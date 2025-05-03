@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/actify/static/css/main.833ba05a.css",
+    "main.js": "/actify/static/js/main.573b56f5.js",
+    "static/js/453.393e5603.chunk.js": "/actify/static/js/453.393e5603.chunk.js",
+    "index.html": "/actify/index.html",
+    "main.833ba05a.css.map": "/actify/static/css/main.833ba05a.css.map",
+    "main.573b56f5.js.map": "/actify/static/js/main.573b56f5.js.map",
+    "453.393e5603.chunk.js.map": "/actify/static/js/453.393e5603.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.833ba05a.css",
+    "static/js/main.573b56f5.js"
+  ]
+}
