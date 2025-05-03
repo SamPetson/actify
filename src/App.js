@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Background from './components/Background';
 import ModuleTabs from './components/ModuleTabs';
@@ -9,7 +9,7 @@ import './styles/global.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/actify">
+    <Router>
       <div className="app-container">
         <Background />
         <div className="content-container">
@@ -22,7 +22,7 @@ function App() {
           </AnimatePresence>
         </div>
       </div>
-    <BrowserRouter basename="/actify">
+    </Router>
   );
 }
 
