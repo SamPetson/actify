@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const ModuleTabs = () => {
   const [modules, setModules] = useState([]);
@@ -11,10 +10,12 @@ const ModuleTabs = () => {
   useEffect(() => {
     const fetchModules = async () => {
       try {
-        const response = await axios.get('/modules/list');
-        setModules(response.data);
-        if (response.data.length > 0 && !activeTab) {
-          setActiveTab(response.data[0].name);
+        const response = await fetch(`${process.env.PUBLIC_URL}/modules/list.json`);
+        if (!response.ok) throw new Error('Failed to fetch modules');
+        const data = await response.json();
+        setModules(data);
+        if (data.length > 0 && !activeTab) {
+          setActiveTab(data[0].name);
         }
       } catch (error) {
         console.error('Error fetching modules:', error);
@@ -22,8 +23,7 @@ const ModuleTabs = () => {
     };
 
     fetchModules();
-    const interval = setInterval(fetchModules, 5000); // Check for new modules every 5 seconds
-
+    const interval = setInterval(fetchModules, 5000);
     return () => clearInterval(interval);
   }, [activeTab]);
 
