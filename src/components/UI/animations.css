@@ -1,0 +1,116 @@
+/* Button animations */
+.actify-button {
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  .actify-button.primary {
+    --primary-dark: #3a5a8a;
+  }
+  
+  .actify-button.secondary {
+    --secondary-dark: #0d4b6e;
+  }
+  
+  .actify-button.accent {
+    --accent-dark: #3da8d4;
+  }
+  
+  .actify-button.ghost {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Card animations */
+  .actify-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .actify-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .actify-card:hover::before {
+    opacity: 1;
+  }
+  
+  .card-header {
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  .card-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  
+  .card-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Fade animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  /* Slide animations */
+  .slide-up {
+    animation: slideUp 0.5s ease-in-out;
+  }
+  
+  .slide-down {
+    animation: slideDown 0.5s ease-in-out;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }

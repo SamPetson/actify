@@ -1,0 +1,81 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  }
+  
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: float 15s infinite linear;
+  }
+  
+  .particle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 10%;
+    animation-duration: 20s;
+    background: radial-gradient(circle, rgba(100, 100, 255, 0.1) 0%, transparent 70%);
+  }
+  
+  .particle:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 70%;
+    animation-duration: 15s;
+    background: radial-gradient(circle, rgba(255, 100, 100, 0.1) 0%, transparent 70%);
+  }
+  
+  .particle:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 50%;
+    animation-duration: 25s;
+    background: radial-gradient(circle, rgba(100, 255, 100, 0.1) 0%, transparent 70%);
+  }
+  
+  .particle:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    top: 70%;
+    left: 30%;
+    animation-duration: 18s;
+    background: radial-gradient(circle, rgba(255, 255, 100, 0.1) 0%, transparent 70%);
+  }
+  
+  .particle:nth-child(5) {
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 80%;
+    animation-duration: 22s;
+    background: radial-gradient(circle, rgba(100, 255, 255, 0.1) 0%, transparent 70%);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(calc(var(--mouse-x, 0.5) * 50px - 25px), calc(var(--mouse-y, 0.5) * 50px - 25px)) rotate(90deg);
+    }
+    50% {
+      transform: translate(0, 0) rotate(180deg);
+    }
+    75% {
+      transform: translate(calc(var(--mouse-x, 0.5) * -50px + 25px), calc(var(--mouse-y, 0.5) * -50px + 25px)) rotate(270deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
