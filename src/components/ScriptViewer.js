@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -17,11 +16,13 @@ const ScriptViewer = () => {
     const fetchScript = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`/modules/${moduleName}`);
-        setScriptContent(response.data);
-        setLoading(false);
+        const response = await fetch(`${process.env.PUBLIC_URL}/modules/${moduleName}`);
+        if (!response.ok) throw new Error('Module not found');
+        const data = await response.text();
+        setScriptContent(data);
       } catch (error) {
         console.error('Error fetching script:', error);
+      } finally {
         setLoading(false);
       }
     };
