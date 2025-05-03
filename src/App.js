@@ -9,7 +9,7 @@ import './styles/global.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/actify">
       <div className="app-container">
         <Background />
         <div className="content-container">
@@ -22,7 +22,7 @@ function App() {
           </AnimatePresence>
         </div>
       </div>
-    </Router>
+    <BrowserRouter basename="/actify">
   );
 }
 
